@@ -5,10 +5,14 @@ import { aiHandler } from "./ai";
 const app = new Elysia()
   .use(cors())
   .get("/", () => "Tambo + Elysia AI Server is running")
-  .post("/api/ai", aiHandler)
-  .listen(3000);
+  .post("/api/ai", aiHandler);
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
-);
-console.log(`🔑 Tambo API Key Loaded: ${!!process.env.TAMBO_API_KEY}`);
+export default app;
+
+if (process.env.NODE_ENV !== "production") {
+  app.listen(3000);
+  console.log(
+    `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
+  );
+  console.log(`🔑 Tambo API Key Loaded: ${!!process.env.TAMBO_API_KEY}`);
+}
