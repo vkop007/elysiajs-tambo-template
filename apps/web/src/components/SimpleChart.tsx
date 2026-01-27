@@ -14,7 +14,7 @@ export function SimpleChart({ title = "Chart", data = [] }: SimpleChartProps) {
   const maxValue = Math.max(...data.map((d) => d.value), 1);
 
   return (
-    <div className="p-6 border border-slate-200/60 rounded-2xl bg-white shadow-sm w-full max-w-lg">
+    <div className="p-6 bg-white w-full">
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-3">
           <div className="p-2 bg-slate-50 rounded-xl text-slate-900 border border-slate-100">
@@ -38,7 +38,7 @@ export function SimpleChart({ title = "Chart", data = [] }: SimpleChartProps) {
               className="flex-1 flex flex-col items-center gap-3 group h-full justify-end"
             >
               <div
-                className="w-full max-w-[24px] bg-slate-900 rounded-lg hover:bg-slate-700 transition-all relative animate-in slide-in-from-bottom-4 duration-500 shadow-sm"
+                className="w-full max-w-[24px] bg-indigo-500 rounded-lg hover:bg-indigo-600 transition-all relative animate-in slide-in-from-bottom-4 duration-500 shadow-sm"
                 style={{
                   height: `${Math.max(heightPercentage, 4)}%`,
                   animationDelay: `${index * 50}ms`,

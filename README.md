@@ -2,21 +2,11 @@
 
 A high-performance, developer-first starter template for building Generative AI applications with Elysia.js and Bun.
 
-## 🖼️ Preview
-
-![App Screenshot](apps/demo/ScreenShot.png)
-
-### 🎥 Demo Video
-
-![Video Thumbnail](apps/demo/video.jpeg)
-
----
-
 ## ✨ Features at a Glance
 
 - **Bun Monorepo**: Clean separation between `apps/web` and `apps/server`.
-- **Elysia AI Layer**: Optimized for real-time text and tool streaming using `RunCreateParams`.
-- **Custom Component Registry**: Easy-to-extend registry in `apps/web/src/tambo/registry.ts`.
+- **Tambo AI Layer**: Optimized for real-time text and tool streaming using `RunCreateParams` with Elysia.js.
+- **Tambo Component Registry**: Easy-to-extend registry in `apps/web/src/tambo/registry.ts`.
 - **Power Prompts**: Pre-configured data-rich suggestions to showcase Generative UI instantly.
 
 ## 🛠️ Getting Started
@@ -38,7 +28,7 @@ A high-performance, developer-first starter template for building Generative AI 
 
    ```bash
    cp .env.example .env
-   # Add your TAMBO_API_KEY to .env
+   # Add your TAMBO_API_KEY (Backend) and VITE_TAMBO_API_KEY (Frontend) to .env
    ```
 
 3. **Run development server**:
@@ -51,18 +41,18 @@ A high-performance, developer-first starter template for building Generative AI 
 
 ## 📦 What's Included
 
-- **Bun**: Fast JavaScript runtime and package manager.
-- **Elysia.js**: High-performance web framework for the backend.
-- **Tambo React SDK**: For streaming interactive AI components.
-- **Chatbot Design System**: Modern, dark-mode focused UI.
+- **Bun & Elysia.js**: A high-performance stack for lightning-fast AI response times.
+- **Tambo React SDK**: Native hooks and components for streaming Generative UI.
+- **Pre-built Components**: Interactive `SimpleChart` and `TodoList` examples.
+- **Modern UI**: Clean, light-mode design with purple accents (`indigo-600`).
 
 ## 📋 Tambo Integration
 
-This template demonstrates a robust integration between a high-performance Elysia backend and a React frontend:
+This template showcases a production-ready pattern for connecting a fast backend with a reactive frontend:
 
-- **Backend**: Tool definitions using `RunCreateParams` logic.
-- **Frontend**: Seamless mapping in `registry.ts` with Zod schema validation.
-- **Demo**: Use the "Master Showcase" prompt to see Notifications, Pricing, Charts, TaskLists, and DataTables stream in real-time.
+- **Type-Safe Backend**: Tool definitions optimized for LLM function calling.
+- **Dynamic Frontend**: Automatic component mapping via a centralized registry.
+- **Zod Validation**: Robust prop validation ensures your components always receive the right data.
 
 ---
 
