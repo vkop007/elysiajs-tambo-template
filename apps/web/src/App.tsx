@@ -8,7 +8,6 @@ import {
   ArrowUpRight,
   BarChart3,
   Database,
-  Search,
   Zap,
   CheckSquare,
   CreditCard,
@@ -30,7 +29,9 @@ function App() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (!input.trim() || isLoading) return;
     submit();
+    setValue("");
   };
 
   const handleSuggestionClick = (text: string) => {
@@ -75,25 +76,27 @@ function App() {
   const suggestions = [
     {
       icon: <Database className="h-4 w-4" />,
-      text: "Portfolio revenue by region",
+      text: "Q3 Financial Report",
       prompt:
-        "Show me a detailed table of my Q4 portfolio revenue broken down by region and product line. Include a summary of growth vs Q3.",
+        "Generate a comprehensive financial report for a hypothetical SaaS company 'CloudScale' for Q3 2023. 1. Create a detailed table with columns: 'Month', 'New MRR', 'Churn Rate (%)', and 'Active Customers'. Use realistic numbers for July, August, and September. 2. Generate a bar chart showing the 'New MRR' growth trend over these months.",
     },
     {
-      icon: <CheckSquare className="h-4 w-4" />,
-      text: "Fetch Jira tickets for team Alpha",
-      prompt: "Show the Jira sprint backlog for team Alpha as a task list",
+      icon: <BarChart3 className="h-4 w-4" />,
+      text: "Market Share Analysis",
+      prompt:
+        "Analyze the global EV market for 2023. Show a table of the top 5 manufacturers by sales volume and market share. Then, visualize the market share in a chart. Include a recommendation for a 'pro' analytics subscription.",
     },
     {
-      icon: <Search className="h-4 w-4" />,
-      text: "System health from DataDog",
-      prompt: "Fetch current system health alerts from DataDog",
+      icon: <CreditCard className="h-4 w-4" />,
+      text: "Compare Pricing Plans",
+      prompt:
+        "Show me a comparison of three pricing plans for a developer platform: Basic, Pro, and Enterprise. Highlight the Pro plan with features like SSO and priority support.",
     },
     {
       icon: <Zap className="h-4 w-4" />,
-      text: "Analyze sales and chart it",
+      text: "System Health & Alerts",
       prompt:
-        "Retrieve the top 5 sales opportunities from Salesforce and show them in a chart compared to last month.",
+        "Identify potential system bottlenecks. Show a table of current server load across regions and highlight any that are over 80%. Use a chart to show latency trends.",
     },
   ];
 
